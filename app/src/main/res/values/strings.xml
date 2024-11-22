@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AppBanSach</string>
+    <string name="productManagerImageDes">Quản lý sản phẩm image</string>
+    <string name="userManagerImageDes">Quản lý khách hàng image</string>
+</resources>
