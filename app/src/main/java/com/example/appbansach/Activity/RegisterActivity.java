@@ -86,7 +86,8 @@ public class RegisterActivity extends AppCompatActivity {
                             @Override
                             public void onResponse(Call<User> call, Response<User> response) {
                                 if(response.isSuccessful()){
-                                    Utils.user_current.setEmail(str_email);
+//                                    Utils.user_current.setEmail(str_email);
+                                    Utils.user_current.setUsername(str_username);
                                     Utils.user_current.setPassword(str_pass);
                                     Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                                     startActivity(intent);

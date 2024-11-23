@@ -12,6 +12,7 @@ public class User {
     private String fullName;
     private int status;
     private Role role;
+//    private int roleId;
     private String phoneNumber;
     public String getRetryPassword() {
         return retryPassword;
@@ -28,6 +29,15 @@ public class User {
     public void setRole(Role role) {
         this.role = role;
     }
+
+
+//    public int getRoleId() {
+//        return roleId;
+//    }
+//
+//    public void setRoleId(int roleId) {
+//        this.roleId = roleId;
+//    }
 
     public String getPhoneNumber() {
         return phoneNumber;

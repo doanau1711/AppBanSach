@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.d("LoginActivity", "Username: " + str_email);
                 Log.d("LoginActivity", "Password: " + str_pass);
                 if(TextUtils.isEmpty(str_email)){
-                    Toast.makeText(getApplicationContext(),"Bạn chưa nhập email",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(),"Bạn chưa nhập userName",Toast.LENGTH_SHORT).show();
                 }else if(TextUtils.isEmpty(str_pass)){
                     Toast.makeText(getApplicationContext(),"Bạn chưa nhập mật khẩu",Toast.LENGTH_SHORT).show();
                 }else {
@@ -153,7 +153,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onResume() {
         super.onResume();
         if(Utils.user_current.getEmail() != null && Utils.user_current.getPassword() != null){
-            emailET.setText(Utils.user_current.getEmail());
+            emailET.setText(Utils.user_current.getUsername());
             passwordET.setText(Utils.user_current.getPassword());
         }
     }
