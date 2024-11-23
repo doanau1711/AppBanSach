@@ -17,6 +17,7 @@ import com.example.appbansach.R;
 import com.example.appbansach.model.Order;
 import com.example.appbansach.model.OrderDetail;
 import com.example.appbansach.model.ResponseHistoryOrderModel;
+import com.google.gson.Gson;
 
 import java.text.DecimalFormat;
 import java.util.List;
@@ -86,6 +87,15 @@ public class DonHangAdapter extends RecyclerView.Adapter<DonHangAdapter.MyViewHo
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ChiTietDonHangActivity.class);
 //            intent.putExtra("donHang", donHang);
+//            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//            context.startActivity(intent);
+            // Truyền các trường cần thiết qua Intent
+            intent.putExtra("orderId", donHang.getOrderId());
+            intent.putExtra("totalPrice", donHang.getTotalPrice().toString());
+            intent.putExtra("status", donHang.getStatus());
+            intent.putExtra("orderDetails", new Gson().toJson(donHang.getOrderDetails())); // Chuyển danh sách sang JSON string
+            intent.putExtra("fullName", donHang.getFullName());
+            intent.putExtra("address", donHang.getAddress());
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             context.startActivity(intent);
         });

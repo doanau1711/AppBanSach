@@ -29,6 +29,9 @@ public interface OrderApi {
             @Query("status") int status
     );
 
-
+    @POST("order/cancel")
+    Call<ResponseHistoryOrderModel>cancelOrder(
+            @Query("orderId") int orderId
+    );
 
 }

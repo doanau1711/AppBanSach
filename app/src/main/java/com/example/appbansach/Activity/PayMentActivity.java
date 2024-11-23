@@ -3,6 +3,7 @@ package com.example.appbansach.Activity;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -57,7 +58,7 @@ public class PayMentActivity extends AppCompatActivity {
                 requestOrderModel.setAddress(Utils.user_current.getAddress());
                 requestOrderModel.setEmail(Utils.user_current.getEmail());
                 requestOrderModel.setFullName(Utils.user_current.getFullName());
-                requestOrderModel.setStatus(1);
+                requestOrderModel.setStatus(0);
                 requestOrderModel.setUserId(Utils.user_current.getUserId());
                 Log.d("RequestOrderModel2", "Request Data: " + requestOrderModel.toString());
                 orderApi.createOrders(requestOrderModel).enqueue(new Callback<ResponseOrderModel>() {
@@ -65,6 +66,8 @@ public class PayMentActivity extends AppCompatActivity {
                     public void onResponse(Call<ResponseOrderModel> call, Response<ResponseOrderModel> response) {
                         if(response.isSuccessful()){
                             Toast.makeText(getApplicationContext(), "Tạo đơn hàng thành công", Toast.LENGTH_SHORT).show();
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                            startActivity(intent);
                         }else {
                             Toast.makeText(getApplicationContext(), "Tạo đơn hàng thất bại", Toast.LENGTH_SHORT).show();
                         }

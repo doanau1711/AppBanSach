@@ -1,10 +1,11 @@
 package com.example.appbansach.model;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
-public class ResponseHistoryOrderModel {
+public class ResponseHistoryOrderModel implements Serializable {
     private int orderId;
 //    private LocalDate orderDate;
     private String orderDate;
